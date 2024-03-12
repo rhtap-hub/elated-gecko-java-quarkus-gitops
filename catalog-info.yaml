@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: elated-gecko-java-quarkus-gitops
+  description: This is GitOps manifest for elated-gecko-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: elated-gecko-java-quarkus
+    janus-idp.io/tekton: elated-gecko-java-quarkus 
+    backstage.io/kubernetes-id: elated-gecko-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:elated-gecko-java-quarkus
